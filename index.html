@@ -111,16 +111,33 @@
   </div>
 </section>
  
-<section class="section catalogo">
+<section class="section coffee-slider-section texture">
   <div class="container">
     <div class="section-head reveal">
       <div class="head-copy">
-        <h2>Destacados de la Tienda</h2>
-        <p>Lotes recién tostados, métodos y accesorios listos para tu pedido.</p>
+        <h2>Colección de Cafés de Autor</h2>
+        <p>Conoce a fondo nuestras varietales exclusivas, sus notas de cata y perfiles de origen.</p>
       </div>
       <a href="catalogo.html" class="btn btn-dark">VER TIENDA COMPLETA</a>
     </div>
-    <div class="cafe-grid" id="cafeGrid"></div>
+
+    <!-- Carrusel destacado: Foto a un lado, descripción al otro -->
+    <div class="featured-slider-container" id="featuredSliderContainer">
+      <div class="featured-slider-track" id="featuredSliderTrack">
+        <!-- Diapositivas generadas dinámicamente -->
+      </div>
+
+      <!-- Flechas manuales de navegación -->
+      <button class="slider-arrow prev" id="sliderPrev" aria-label="Café anterior">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="slider-arrow next" id="sliderNext" aria-label="Siguiente café">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Puntos indicativos -->
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
   </div>
 </section>
  

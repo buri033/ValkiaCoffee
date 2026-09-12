@@ -15,25 +15,29 @@ const productos = [
     id: 'p1', categoria: 'cafes', nombre: 'Caturra Huila', origen: 'Huila, Colombia · 1.800 msnm',
     notas: ['Chocolate', 'Caramelo', 'Frutos rojos'], proceso: 'Lavado',
     intensidad: 3, precio: 38000, precioFmt: '$38.000', accent: '#6B4A35',
-    imagen: 'assets/images/products/bolsa-caturra.png', badge: 'Edición de Autor'
+    imagen: 'assets/images/products/bolsa-caturra.png', badge: 'Edición de Autor',
+    desc: 'Perfil clásico colombiano de tueste medio. Taza redonda con dulzor acaramelado y final prolongado a cacao fino.'
   },
   {
     id: 'p2', categoria: 'cafes', nombre: 'Geisha Nariño', origen: 'Nariño, Colombia · 1.950 msnm',
     notas: ['Jazmín', 'Citrus', 'Miel de Azahar'], proceso: 'Honey Anaeróbico',
     intensidad: 2, precio: 48000, precioFmt: '$48.000', accent: '#68705A',
-    imagen: 'assets/images/products/bolsa-wush-wush.png', badge: 'Lote Exclusivo'
+    imagen: 'assets/images/products/bolsa-wush-wush.png', badge: 'Lote Exclusivo',
+    desc: 'Gran expresividad floral y elegancia. Notas brillantes a jazmín silvestre y acidez sedosa a lima madura.'
   },
   {
     id: 'p3', categoria: 'cafes', nombre: 'SL28 Sierra Nevada', origen: 'Santa Marta, Colombia · 1.700 msnm',
     notas: ['Mandarina', 'Té Verde', 'Cuerpo Cremoso'], proceso: 'Lavado Especial',
     intensidad: 2, precio: 45000, precioFmt: '$45.000', accent: '#B79A73',
-    imagen: 'assets/images/products/bolsa-sl28.png', badge: 'Selección Sommelier'
+    imagen: 'assets/images/products/bolsa-sl28.png', badge: 'Selección Sommelier',
+    desc: 'Varietal keniana adaptada al microclima de la Sierra Nevada. Carácter cítrico refinado y final herbal fresco.'
   },
   {
     id: 'p4', categoria: 'cafes', nombre: 'Borbón Rosado Quindío', origen: 'Genoa, Quindío · 1.850 msnm',
     notas: ['Frutos Rojos', 'Cerezo', 'Vino Especiado'], proceso: 'Natural 72h',
     intensidad: 4, precio: 42000, precioFmt: '$42.000', accent: '#A9694F',
-    imagen: 'assets/images/products/bolsa-borbon.png', badge: 'Favorito del Tostador'
+    imagen: 'assets/images/products/bolsa-borbon.png', badge: 'Favorito del Tostador',
+    desc: 'Fermentación natural prolongada. Notas complejas a frutos silvestres maduros y cuerpo licoroso inolvidable.'
   },
 
   // --- MÉTODOS Y ACCESORIOS ---
@@ -238,12 +242,154 @@ function renderMetodos(){
   `).join('');
 }
 
+function renderCoffeeSlider(){
+  const container = document.getElementById('featuredSliderContainer');
+  const track = document.getElementById('featuredSliderTrack');
+  const dotsContainer = document.getElementById('sliderDots');
+  if(!track || !container) return;
+
+  const cafes = productos.filter(p => p.categoria === 'cafes');
+  if(cafes.length === 0) return;
+
+  let currentIndex = 0;
+  let autoplayTimer = null;
+
+  // Renderizar diapositivas (Foto a un lado, descripción al otro)
+  track.innerHTML = cafes.map((c, index) => `
+    <div class="slider-slide ${index === 0 ? 'active' : ''}">
+      <div class="slide-grid">
+        <div class="slide-photo-col" style="background:${c.accent}15">
+          ${c.badge ? `<span class="slide-badge">${c.badge}</span>` : ''}
+          <img src="${c.imagen}" alt="${c.nombre} - Valkia Coffee" loading="lazy">
+        </div>
+        <div class="slide-info-col">
+          <span class="slide-origin">${c.origen}</span>
+          <h3 class="slide-title">${c.nombre}</h3>
+          <div class="slide-notes-list">
+            ${c.notas.map(n => `<span class="slide-note-pill">${n}</span>`).join('')}
+          </div>
+          <p class="slide-desc">${c.desc || ''}</p>
+          <div class="slide-specs">
+            <div class="spec-item">
+              <span class="spec-label">Proceso</span>
+              <span class="spec-val">${c.proceso}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Intensidad</span>
+              <div class="intensity">${dots(c.intensidad)}</div>
+            </div>
+          </div>
+          <div class="slide-actions">
+            <a href="catalogo.html" class="btn btn-dark">VER EN LA TIENDA &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Renderizar puntos indicativos
+  if(dotsContainer){
+    dotsContainer.innerHTML = cafes.map((_, i) => `
+      <button class="slider-dot ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="Ir al café ${i + 1}"></button>
+    `).join('');
+  }
+
+  function goToSlide(index){
+    const slides = track.querySelectorAll('.slider-slide');
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
+
+    if(index < 0) index = cafes.length - 1;
+    if(index >= cafes.length) index = 0;
+
+    currentIndex = index;
+
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === currentIndex);
+    });
+
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  // Navegación manual por flechas
+  const prevBtn = document.getElementById('sliderPrev');
+  const nextBtn = document.getElementById('sliderNext');
+
+  if(prevBtn){
+    prevBtn.addEventListener('click', () => {
+      goToSlide(currentIndex - 1);
+      resetAutoplay();
+    });
+  }
+
+  if(nextBtn){
+    nextBtn.addEventListener('click', () => {
+      goToSlide(currentIndex + 1);
+      resetAutoplay();
+    });
+  }
+
+  // Navegación manual por puntos
+  if(dotsContainer){
+    dotsContainer.querySelectorAll('.slider-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        const idx = parseInt(e.target.getAttribute('data-index'), 10);
+        goToSlide(idx);
+        resetAutoplay();
+      });
+    });
+  }
+
+  // Transición automática (Autoplay) cada 4.5 segundos
+  function startAutoplay(){
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 4500);
+  }
+
+  function stopAutoplay(){
+    if(autoplayTimer){
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay(){
+    startAutoplay();
+  }
+
+  // Pausar auto-cambio al pasar el ratón para lectura cómoda
+  container.addEventListener('mouseenter', stopAutoplay);
+  container.addEventListener('mouseleave', startAutoplay);
+
+  // Soporte para gestos táctiles (swipe) en móviles
+  let startX = 0;
+  container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = startX - endX;
+    if(Math.abs(diffX) > 40){
+      if(diffX > 0) goToSlide(currentIndex + 1);
+      else goToSlide(currentIndex - 1);
+      resetAutoplay();
+    }
+  }, { passive: true });
+
+  startAutoplay();
+}
+
 // ==========================================
 // INICIALIZACIÓN
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   renderProductos();
   setupFilterButtons();
+  renderCoffeeSlider();
   renderMetodos();
   updateCartBadge();
   renderCart();
