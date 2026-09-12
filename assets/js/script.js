@@ -487,4 +487,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Animaciones reveal al hacer scroll en cualquier página
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('in-view'));
+  }
 });

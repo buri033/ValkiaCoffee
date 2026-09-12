@@ -314,22 +314,30 @@
   .cafe-card .link-quiet{ align-self:flex-start; }
  
   /* ---------- perfiles ---------- */
-  .perfiles{ background:var(--cafe-oscuro); color:var(--blanco); }
-  .perfiles .section-head p{ color:rgba(250,249,246,0.7); }
-  .perfil-grid{ display:grid; grid-template-columns:1fr; gap:1px; background:rgba(250,249,246,0.14); }
+  .perfiles{ background:var(--crema); color:var(--cafe-oscuro); padding: 4.5rem var(--pad); border-top:1px solid var(--arena); border-bottom:1px solid var(--arena); }
+  .perfiles .section-head h2{ color:var(--cafe-oscuro); }
+  .perfiles .section-head p{ color:var(--cafe-medio); }
+  .perfil-grid{ display:grid; grid-template-columns:1fr; gap:1.8rem; }
   @media (min-width:800px){ .perfil-grid{ grid-template-columns:repeat(3,1fr); } }
   .perfil{
-    background:var(--cafe-oscuro);
-    padding:3.2rem 2.2rem;
-    transition:background 0.35s ease;
+    background:var(--blanco);
+    border:1px solid var(--arena);
+    border-radius:6px;
+    padding:2.6rem 2rem;
+    transition:transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    display:flex; flex-direction:column;
   }
-  .perfil:hover{ background:#2f231b; }
-  .perfil h3{ font-size:2rem; margin-bottom:1rem; }
-  .perfil p{ color:rgba(250,249,246,0.72); font-size:1.08rem; }
-  .perfil .swatch{ width:34px; height:3px; margin-bottom:1.4rem; }
+  .perfil:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(36,26,20,0.09);
+    border-color:var(--cafe-medio);
+  }
+  .perfil .swatch{ width:48px; height:4px; border-radius:2px; margin-bottom:1.2rem; }
   .swatch.cafe-medio{ background:var(--cafe-medio); }
   .swatch.oliva{ background:var(--oliva); }
   .swatch.arena{ background:var(--arena); }
+  .perfil h3{ font-size:1.8rem; margin-bottom:0.6rem; color:var(--cafe-oscuro); font-family:var(--serif); }
+  .perfil p{ color:var(--cafe-medio); font-size:1.05rem; line-height:1.55; }
  
   /* ---------- metodos ---------- */
   .metodos{ background:var(--arena); }
@@ -361,35 +369,38 @@
   .paso p{ font-size:1.05rem; color:var(--cafe-medio); }
  
   /* ---------- cta final ---------- */
-  .cta-final{ background:var(--cafe-oscuro); color:var(--blanco); }
+  .cta-final{ background:var(--blanco); color:var(--cafe-oscuro); }
   .cta-wrap{ display:grid; grid-template-columns:1fr; gap:3rem; }
   @media (min-width:900px){ .cta-wrap{ grid-template-columns:0.9fr 1.1fr; gap:5rem; } }
-  .cta-copy h2{ font-size:clamp(2.1rem,3.8vw,2.9rem); margin-bottom:1.2rem; }
-  .cta-copy p{ color:rgba(250,249,246,0.72); max-width:38ch; font-size:1.12rem; }
+  .cta-copy h2{ font-size:clamp(2.1rem,3.8vw,2.9rem); margin-bottom:1.2rem; color:var(--cafe-oscuro); }
+  .cta-copy p{ color:var(--cafe-medio); max-width:38ch; font-size:1.12rem; }
  
   form.finder{ display:flex; flex-direction:column; gap:1.6rem; }
-  .field label{ display:block; font-size:0.88rem; letter-spacing:0.03em; margin-bottom:0.55rem; color:rgba(250,249,246,0.75); }
+  .field label{ display:block; font-size:0.88rem; letter-spacing:0.03em; margin-bottom:0.55rem; color:var(--cafe-oscuro); font-weight:500; }
   .field input[type=text], .field input[type=email]{
-    width:100%; background:transparent; border:none; border-bottom:1px solid rgba(250,249,246,0.35);
-    color:var(--blanco); font-family:var(--sans); font-size:1.12rem; padding:0.6rem 0;
+    width:100%; background:transparent; border:none; border-bottom:1px solid var(--arena);
+    color:var(--cafe-oscuro); font-family:var(--sans); font-size:1.12rem; padding:0.6rem 0;
+    transition:border-color 0.2s ease;
   }
-  .field input::placeholder{ color:rgba(250,249,246,0.4); }
-  .field input:focus{ outline:none; border-bottom-color:var(--blanco); }
-  .field-error{ font-size:0.84rem; color:#f87171; margin-top:0.4rem; display:block; font-weight:500; }
+  .field input::placeholder{ color:rgba(36,26,20,0.4); }
+  .field input:focus{ outline:none; border-bottom-color:var(--cafe-oscuro); }
+  .field-error{ font-size:0.84rem; color:#dc2626; margin-top:0.4rem; display:block; font-weight:500; }
  
   .pref-options{ display:flex; flex-wrap:wrap; gap:0.7rem; }
   .pref-options input{ position:absolute; opacity:0; pointer-events:none; }
   .pref-options label{
-    margin:0; font-size:0.95rem; padding:0.7rem 1.2rem; border:1px solid rgba(250,249,246,0.35);
-    border-radius:999px; cursor:pointer; transition:all 0.2s ease; color:rgba(250,249,246,0.85);
+    margin:0; font-size:0.95rem; padding:0.7rem 1.2rem; border:1px solid var(--arena);
+    border-radius:999px; cursor:pointer; transition:all 0.2s ease; color:var(--cafe-oscuro);
+    background:var(--crema);
   }
-  .pref-options input:checked + label{ background:var(--blanco); color:var(--cafe-oscuro); border-color:var(--blanco); }
+  .pref-options input:checked + label{ background:var(--cafe-oscuro); color:var(--blanco); border-color:var(--cafe-oscuro); }
  
-  .finder .btn-primary{ align-self:flex-start; margin-top:0.4rem; }
+  .finder .btn-primary{ background:var(--cafe-oscuro); color:var(--blanco); align-self:flex-start; margin-top:0.4rem; }
+  .finder .btn-primary:hover{ background:var(--cafe-medio); }
   .form-success{ display:none; }
   .form-success.visible{ display:block; }
-  .form-success p{ color:rgba(250,249,246,0.85); font-size:1.15rem; line-height:1.7; }
-  .form-success strong{ font-family:var(--serif); font-size:1.6rem; display:block; margin-bottom:0.8rem; }
+  .form-success p{ color:var(--cafe-medio); font-size:1.15rem; line-height:1.7; }
+  .form-success strong{ font-family:var(--serif); font-size:1.6rem; display:block; margin-bottom:0.8rem; color:var(--cafe-oscuro); }
  
   /* ---------- footer ---------- */
   footer{
@@ -437,7 +448,7 @@
 
   .page-hero{
     position:relative;
-    padding:9.5rem var(--pad) 4.5rem;
+    padding:8.5rem var(--pad) 4.2rem;
     background:linear-gradient(160deg, #382A21 0%, var(--cafe-oscuro) 100%);
     color:var(--blanco);
     overflow:hidden;
@@ -450,6 +461,7 @@
     font-size:clamp(2.4rem, 5vw, 3.8rem);
     line-height:1.1;
     margin-bottom:1rem;
+    color:var(--blanco);
   }
   .page-hero-subtitle{
     font-size:1.18rem;
