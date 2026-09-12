@@ -428,16 +428,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // Formulario Sommelier / Finder
+  // Formulario Sommelier / Finder (Validación JS en el DOM)
   const form = document.getElementById('finderForm');
   const success = document.getElementById('formSuccess');
   if(form && success){
+    const nombreInput = document.getElementById('nombre');
+    const correoInput = document.getElementById('correo');
+    const nombreError = document.getElementById('nombreError');
+    const correoError = document.getElementById('correoError');
+
+    const validateForm = () => {
+      let isValid = true;
+      const nombreVal = nombreInput ? nombreInput.value.trim() : '';
+      const correoVal = correoInput ? correoInput.value.trim() : '';
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if(nombreError) nombreError.textContent = '';
+      if(correoError) correoError.textContent = '';
+
+      if(!nombreVal){
+        if(nombreError) nombreError.textContent = 'Por favor ingresa tu nombre completo.';
+        isValid = false;
+      } else if(nombreVal.length < 3){
+        if(nombreError) nombreError.textContent = 'El nombre debe tener al menos 3 caracteres.';
+        isValid = false;
+      }
+
+      if(!correoVal){
+        if(correoError) correoError.textContent = 'Por favor ingresa tu correo electrónico.';
+        isValid = false;
+      } else if(!emailRegex.test(correoVal)){
+        if(correoError) correoError.textContent = 'Ingresa un formato de correo válido (ej. tu@correo.com).';
+        isValid = false;
+      }
+
+      return isValid;
+    };
+
+    if(nombreInput){
+      nombreInput.addEventListener('input', () => {
+        if(nombreError && nombreInput.value.trim().length >= 3) nombreError.textContent = '';
+      });
+    }
+    if(correoInput){
+      correoInput.addEventListener('input', () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(correoError && emailRegex.test(correoInput.value.trim())) correoError.textContent = '';
+      });
+    }
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nombre = document.getElementById('nombre').value.trim() || 'amante del café';
-      document.getElementById('successName').textContent = nombre;
-      form.style.display = 'none';
-      success.classList.add('visible');
+      if(validateForm()){
+        const nombre = nombreInput.value.trim();
+        document.getElementById('successName').textContent = nombre;
+        form.style.display = 'none';
+        success.classList.add('visible');
+      }
     });
   }
 });

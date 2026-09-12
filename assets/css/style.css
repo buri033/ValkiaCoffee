@@ -197,6 +197,7 @@
     width:48px; height:1px; background:var(--oliva); margin-bottom:1.6rem;
     opacity:0.7;
   }
+  .manifiesto-cta{ margin-top: 1.8rem; }
  
   /* ---------- cifras ---------- */
   .cifras{ background:var(--cafe-oscuro); color:var(--blanco); padding:3.2rem var(--pad); }
@@ -326,6 +327,9 @@
   .perfil h3{ font-size:2rem; margin-bottom:1rem; }
   .perfil p{ color:rgba(250,249,246,0.72); font-size:1.08rem; }
   .perfil .swatch{ width:34px; height:3px; margin-bottom:1.4rem; }
+  .swatch.cafe-medio{ background:var(--cafe-medio); }
+  .swatch.oliva{ background:var(--oliva); }
+  .swatch.arena{ background:var(--arena); }
  
   /* ---------- metodos ---------- */
   .metodos{ background:var(--arena); }
@@ -371,6 +375,7 @@
   }
   .field input::placeholder{ color:rgba(250,249,246,0.4); }
   .field input:focus{ outline:none; border-bottom-color:var(--blanco); }
+  .field-error{ font-size:0.84rem; color:#f87171; margin-top:0.4rem; display:block; font-weight:500; }
  
   .pref-options{ display:flex; flex-wrap:wrap; gap:0.7rem; }
   .pref-options input{ position:absolute; opacity:0; pointer-events:none; }
