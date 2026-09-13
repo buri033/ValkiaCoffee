@@ -1074,6 +1074,20 @@
     background:#140E0A;
     border-color:#3E3027;
   }
+  body.dark-mode .cart-header h3,
+  body.dark-mode .cart-item-title,
+  body.dark-mode .cart-total-row{
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .cart-item-price,
+  body.dark-mode .cart-empty{
+    color:#E6D8C6 !important;
+    font-weight:500;
+  }
+  body.dark-mode .cart-item-remove{
+    color:#FF8A80 !important;
+    font-weight:500;
+  }
   body.dark-mode .cart-close{
     color:#FAF9F6;
   }
