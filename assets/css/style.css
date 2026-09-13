@@ -468,7 +468,7 @@
   @media (min-width:700px){ .footer-top{ grid-template-columns:1.3fr 1fr 1fr 1fr; gap:2rem; } }
   .footer-brand .logo{ color:var(--blanco); }
   .footer-brand p{ font-size:1.02rem; margin-top:0.8rem; max-width:30ch; color:rgba(250,249,246,0.65); }
-  .footer-col h4{
+  .footer-col h3, .footer-col h4{
     font-family:var(--sans); font-size:0.85rem; font-weight:600; letter-spacing:0.06em;
     text-transform:uppercase; color:rgba(250,249,246,0.5); margin-bottom:1.1rem;
   }
