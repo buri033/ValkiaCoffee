@@ -383,9 +383,6 @@ function renderCoffeeSlider(){
   startAutoplay();
 }
 
-// ==========================================
-// INICIALIZACIÓN
-// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   renderProductos();
   setupFilterButtons();
@@ -393,6 +390,22 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMetodos();
   updateCartBadge();
   renderCart();
+
+  // Modo Oscuro (Bonus +4 pts) con persistencia en localStorage
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('valkia_theme');
+  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add('dark-mode');
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('valkia_theme', isDark ? 'dark' : 'light');
+    });
+  }
 
   // Trigger Carrito Drawer
   const cartTriggers = document.querySelectorAll('.cart-trigger');

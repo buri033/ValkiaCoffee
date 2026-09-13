@@ -211,7 +211,9 @@
   .voces-grid{ display:grid; grid-template-columns:1fr; }
   @media (min-width:900px){ .voces-grid{ grid-template-columns:0.9fr 1.1fr; } }
   .voces-photo{
-    aspect-ratio:4/3; overflow:hidden; background:var(--cafe-oscuro);
+    aspect-ratio:4/3; overflow:hidden; background:var(--cafe-medio);
+    border-radius:12px; box-shadow:0 12px 32px rgba(36,26,20,0.12);
+    border:1px solid var(--arena);
     display:flex; align-items:center; justify-content:center;
   }
   @media (min-width:900px){ .voces-photo{ aspect-ratio:auto; height:100%; } }
@@ -267,6 +269,7 @@
   .section-head .head-copy{ display:flex; flex-direction:column; gap:0.9rem; max-width:560px; }
   .section-head h2{ font-size:clamp(2.1rem, 4.2vw, 3.1rem); }
   .section-head p{ color:var(--cafe-medio); font-size:1.12rem; }
+  .section-head-eyebrow{ font-size:0.85rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--oliva); font-weight:600; margin-bottom:0.4rem; display:block; }
   .head-mark{ display:none; }
  
   /* ---------- marginalia (marca vertical en el margen) ---------- */
@@ -840,6 +843,212 @@
     background:var(--cafe-oscuro);
     width:28px;
     border-radius:5px;
+  }
+
+  /* ---------- MODO OSCURO (BONUS +4 PTS) ---------- */
+  .theme-toggle-btn{
+    background:none; border:1px solid transparent; color:inherit; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    padding:0.45rem; border-radius:50%; transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .theme-toggle-btn:hover{ background:rgba(36,26,20,0.08); transform:scale(1.08); }
+  .theme-toggle-btn .sun-icon{ display:none; }
+  .theme-toggle-btn .moon-icon{ display:block; }
+
+  body.dark-mode{
+    background:#140E0A;
+    color:#FAF9F6;
+  }
+
+  /* Header en Modo Oscuro */
+  body.dark-mode header{
+    background:#1C140F;
+    color:#FAF9F6;
+    box-shadow:0 1px 0 rgba(250,249,246,0.1);
+  }
+  body.dark-mode .theme-toggle-btn:hover{ background:rgba(250,249,246,0.12); }
+  body.dark-mode .theme-toggle-btn .sun-icon{ display:block; stroke:#FAF9F6; }
+  body.dark-mode .theme-toggle-btn .moon-icon{ display:none; }
+  body.dark-mode nav.primary-nav a.active{ border-bottom-color:#FAF9F6; }
+
+  /* Secciones claras adaptadas a Modo Oscuro */
+  body.dark-mode .filosofia,
+  body.dark-mode .voces,
+  body.dark-mode .catalogo,
+  body.dark-mode .historia,
+  body.dark-mode .perfiles,
+  body.dark-mode .cta-final,
+  body.dark-mode .coffee-slider-section{
+    background:#140E0A;
+    color:#FAF9F6;
+  }
+
+  body.dark-mode .filosofia p,
+  body.dark-mode .voces blockquote,
+  body.dark-mode .voces-name,
+  body.dark-mode .section-head p,
+  body.dark-mode .perfiles .section-head p,
+  body.dark-mode .cta-copy p,
+  body.dark-mode .field label{
+    color:#D9C8B4;
+  }
+
+  body.dark-mode .field input[type=text],
+  body.dark-mode .field input[type=email]{
+    color:#FAF9F6;
+    border-bottom-color:#3E3027;
+  }
+  body.dark-mode .field input::placeholder{
+    color:rgba(250,249,246,0.4);
+  }
+
+  /* Tarjetas y Contenedores */
+  body.dark-mode .cafe-card,
+  body.dark-mode .perfil,
+  body.dark-mode .metodo,
+  body.dark-mode .paso,
+  body.dark-mode .featured-slider-container{
+    background:#1E1611;
+    border-color:#3E3027;
+    color:#FAF9F6;
+  }
+
+  body.dark-mode .cafe-notes,
+  body.dark-mode .perfil p,
+  body.dark-mode .metodo p,
+  body.dark-mode .paso p,
+  body.dark-mode .slide-desc,
+  body.dark-mode .slide-specs .spec-label{
+    color:#D9C8B4;
+  }
+
+  body.dark-mode .cafe-name,
+  body.dark-mode .perfil h3,
+  body.dark-mode .metodo h3,
+  body.dark-mode .paso h3,
+  body.dark-mode .slide-title,
+  body.dark-mode .historia .section-head h2{
+    color:#FAF9F6;
+  }
+
+  body.dark-mode .paso-num{
+    background:var(--oliva);
+    color:#FAF9F6;
+  }
+
+  /* Botones de filtro de la tienda en Modo Oscuro */
+  body.dark-mode .filter-btn{
+    background:#1E1611;
+    color:#FAF9F6 !important;
+    border-color:#3E3027;
+  }
+  body.dark-mode .filter-btn:hover,
+  body.dark-mode .filter-btn.active{
+    background:var(--oliva);
+    color:#FAF9F6 !important;
+    border-color:var(--oliva);
+  }
+
+  body.dark-mode .voces-photo,
+  body.dark-mode .filosofia-photo{
+    border-color:#3E3027;
+    box-shadow:0 12px 32px rgba(0,0,0,0.4);
+    background:#1E1611;
+  }
+
+  /* Titulos de Secciones en Modo Oscuro (Perfiles de Sabor, Criterio, Coleccion, etc) */
+  body.dark-mode .section-head h2,
+  body.dark-mode .perfiles .section-head h2,
+  body.dark-mode .historia .section-head h2,
+  body.dark-mode .coffee-slider-section .section-head h2,
+  body.dark-mode .filosofia h2,
+  body.dark-mode .cta-copy h2{
+    color:#FAF9F6 !important;
+  }
+
+  body.dark-mode .section-head p,
+  body.dark-mode .perfiles .section-head p,
+  body.dark-mode .historia .section-head p,
+  body.dark-mode .coffee-slider-section .section-head p,
+  body.dark-mode .cta-copy p,
+  body.dark-mode .filosofia p{
+    color:#D9C8B4 !important;
+  }
+
+  /* Opciones radio de recomendador */
+  body.dark-mode .pref-options label{
+    background:#1E1611;
+    color:#FAF9F6;
+    border-color:#3E3027;
+  }
+  body.dark-mode .pref-options input:checked + label{
+    background:var(--oliva);
+    color:#FAF9F6;
+    border-color:var(--oliva);
+  }
+
+  /* Botones primarios en modo oscuro */
+  body.dark-mode .btn-primary,
+  body.dark-mode .finder .btn-primary{
+    background:var(--oliva);
+    color:#FAF9F6;
+  }
+  body.dark-mode .btn-primary:hover,
+  body.dark-mode .finder .btn-primary:hover{
+    background:#7B856A;
+  }
+
+  /* Carrito Drawer en Modo Oscuro */
+  body.dark-mode .cart-drawer{
+    background:#18110D;
+    color:#FAF9F6;
+  }
+  body.dark-mode .cart-header,
+  body.dark-mode .cart-footer{
+    background:#140E0A;
+    border-color:#3E3027;
+  }
+  body.dark-mode .cart-close{
+    color:#FAF9F6;
+  }
+  body.dark-mode .cart-item{
+    border-bottom-color:#281F18;
+  }
+  body.dark-mode .qty-btn{
+    border-color:#3E3027;
+    color:#FAF9F6;
+  }
+
+  /* Preservar Secciones Oscuras por defecto (Hero, Cifras, Momento, Footer, Page-Hero) */
+  body.dark-mode .hero-content,
+  body.dark-mode .page-hero{
+    color:#FAF9F6;
+  }
+  body.dark-mode .hero-title,
+  body.dark-mode .page-hero-title{
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .hero-text,
+  body.dark-mode .page-hero-subtitle{
+    color:rgba(250,249,246,0.9) !important;
+  }
+  body.dark-mode .hero-eyebrow{
+    color:rgba(250,249,246,0.85);
+  }
+  body.dark-mode footer{
+    background:#0E0906 !important;
+    color:rgba(250,249,246,0.75) !important;
+    border-top:1px solid rgba(250,249,246,0.12);
+  }
+  body.dark-mode footer .logo{
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .footer-brand p,
+  body.dark-mode .footer-col h4,
+  body.dark-mode .footer-col li,
+  body.dark-mode .footer-fine,
+  body.dark-mode .footer-legal a{
+    color:rgba(250,249,246,0.7) !important;
   }
 
 
