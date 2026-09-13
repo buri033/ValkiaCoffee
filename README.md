@@ -6,6 +6,8 @@ https://valkia-coffee.vercel.app
 ## Imágenes del Proyecto
 <img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/4018d191-9324-49f4-8407-78271869abbe" />
 <img width="1903" height="942" alt="image" src="https://github.com/user-attachments/assets/4777c952-564f-4479-9b40-7f30c54a4f22" />
+<img width="1906" height="913" alt="image" src="https://github.com/user-attachments/assets/acf95a62-e76a-482d-b730-3c78e933c9a1" />
+<img width="1905" height="916" alt="image" src="https://github.com/user-attachments/assets/cc78caea-96dd-4040-aed6-7e5c6afb2f6c" />
 <img width="1903" height="941" alt="image" src="https://github.com/user-attachments/assets/119072c2-3a90-4a36-a900-1b00f541f6d4" />
 <img width="1893" height="909" alt="image" src="https://github.com/user-attachments/assets/5b5fc8ce-12ba-447a-afab-5043e79cf48e" />
 <img width="1903" height="947" alt="image" src="https://github.com/user-attachments/assets/aa25d44e-b82c-440c-9135-ed9e78974eeb" />
@@ -15,6 +17,9 @@ https://valkia-coffee.vercel.app
 <img width="402" height="780" alt="image" src="https://github.com/user-attachments/assets/0fba971d-2638-4207-a1ed-7ae595236058" />
 <img width="424" height="839" alt="image" src="https://github.com/user-attachments/assets/8e2e4301-8bb7-4eb8-96c8-438472b639c3" />
 <img width="402" height="834" alt="image" src="https://github.com/user-attachments/assets/25d13853-d168-4ef1-935c-fa28ccc9ccf1" />
+<img width="397" height="825" alt="image" src="https://github.com/user-attachments/assets/302e32a1-f6fd-4cbe-9e0a-7a162ea0b53d" />
+<img width="401" height="830" alt="image" src="https://github.com/user-attachments/assets/98a0b8ee-80fa-4542-ace9-f23f1c5667b0" />
+
 
 
 ## Descripción del Proyecto
