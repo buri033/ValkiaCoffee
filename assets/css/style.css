@@ -1051,6 +1051,278 @@
     color:rgba(250,249,246,0.7) !important;
   }
 
+  /* ==========================================
+     DISEÑO RESPONSIVE MÓVIL (MOBILE OPTIMIZATION)
+     ========================================== */
+  @media (max-width: 768px) {
+    /* Header Móvil */
+    header {
+      padding: 0.9rem 1.2rem;
+    }
+    .logo {
+      font-size: 1.35rem;
+    }
+    .logo svg {
+      width: 22px; height: 22px;
+    }
+    .header-actions {
+      gap: 0.6rem;
+    }
+    .cart-trigger span:not(.cart-badge) {
+      display: none;
+    }
+    .cart-trigger {
+      padding: 0.4rem 0.5rem;
+    }
+
+    /* Secciones Padding */
+    .section {
+      padding: 2.8rem 1.2rem;
+    }
+    .container {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: auto;
+      padding-top: 6rem;
+      padding-bottom: 3.5rem;
+    }
+    .hero-content {
+      padding: 2rem 1rem;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 7.5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .hero-text {
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-ctas {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.9rem;
+    }
+    .hero-ctas .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 6.5rem 1.2rem 3rem;
+    }
+    .page-hero-title {
+      font-size: clamp(2rem, 6.5vw, 2.8rem);
+    }
+    .page-hero-subtitle {
+      font-size: 1.05rem;
+    }
+
+    /* Filosofía & Voces */
+    .filosofia-copy, .voces-copy {
+      padding: 2.2rem 1.2rem;
+    }
+    .filosofia h2, .voces-copy blockquote {
+      font-size: 1.65rem;
+      line-height: 1.3;
+    }
+    .filosofia-photo, .voces-photo, .historia-photo {
+      aspect-ratio: 16/10;
+      max-height: 250px;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Cifras */
+    .cifras {
+      padding: 2.5rem 1.2rem;
+    }
+    .cifras-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem 1.2rem;
+    }
+    .cifra-num {
+      font-size: 2.2rem;
+    }
+    .cifra-label {
+      font-size: 0.88rem;
+    }
+
+    /* Carrusel de Cafés Destacados en Móvil */
+    .coffee-slider-section {
+      padding: 1.5rem 1.2rem 2.5rem;
+    }
+    .featured-slider-container {
+      border-radius: 8px;
+    }
+    .slide-grid {
+      min-height: auto;
+    }
+    .slide-photo-col {
+      padding: 1.5rem 1rem;
+      min-height: 220px;
+    }
+    .slide-photo-col img {
+      max-height: 200px;
+    }
+    .slide-info-col {
+      padding: 1.5rem 1.2rem 3.5rem;
+    }
+    .slide-title {
+      font-size: 1.8rem;
+    }
+    .slide-desc {
+      font-size: 0.98rem;
+      margin-bottom: 1.2rem;
+    }
+    .slide-specs {
+      gap: 1.4rem;
+      padding: 0.9rem 0;
+      margin-bottom: 1.4rem;
+    }
+    .slide-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .slider-arrow {
+      width: 36px;
+      height: 36px;
+      opacity: 0.85;
+    }
+    .slider-arrow.prev { left: 8px; }
+    .slider-arrow.next { right: 8px; }
+    .slider-dots {
+      bottom: 1rem;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    /* Catálogo & Filtros */
+    .filter-bar {
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.84rem;
+      width: calc(50% - 0.5rem);
+      text-align: center;
+    }
+    .cafe-grid {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+    }
+    .cafe-card {
+      border: 1px solid var(--arena);
+      border-radius: 8px;
+      padding: 1.2rem;
+      background: var(--blanco);
+    }
+    body.dark-mode .cafe-card {
+      background: #1E1611;
+      border-color: #3E3027;
+    }
+    .cafe-photo {
+      height: 220px;
+      margin-bottom: 1rem;
+    }
+
+    /* Perfiles de Sabor */
+    .perfil-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+    .perfil {
+      padding: 1.6rem 1.4rem;
+    }
+
+    /* Métodos */
+    .metodo-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+    .metodo {
+      padding: 1.8rem 1.4rem;
+    }
+
+    /* Criterio / Historia */
+    .historia-wrap {
+      gap: 2rem;
+    }
+    .pasos {
+      gap: 1rem;
+    }
+    .paso {
+      padding: 1.1rem 1.2rem;
+      gap: 1rem;
+    }
+    .paso-num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      font-size: 1.05rem;
+    }
+
+    /* Formulario Finder / Sommelier */
+    .cta-wrap {
+      gap: 2rem;
+    }
+    .pref-options label {
+      font-size: 0.86rem;
+      padding: 0.6rem 0.9rem;
+      flex: 1 1 calc(50% - 0.5rem);
+      text-align: center;
+    }
+    form.finder .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 3rem;
+    }
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2.2rem;
+      padding-bottom: 2.5rem;
+    }
+    .footer-bottom {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      gap: 1.2rem;
+    }
+    .footer-legal {
+      justify-content: center;
+    }
+
+    /* Cart Drawer en Móvil */
+    .cart-drawer {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cifras-grid {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      text-align: center;
+    }
+    .cifra-label {
+      max-width: 100%;
+    }
+    .filter-btn {
+      width: 100%;
+    }
+  }
+
 
 
 
