@@ -3,6 +3,20 @@
 Enlace del proyecto publicado en Vercel:
 https://valkia-coffee.vercel.app
 
+## Imágenes del Proyecto
+<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/4018d191-9324-49f4-8407-78271869abbe" />
+<img width="1903" height="942" alt="image" src="https://github.com/user-attachments/assets/4777c952-564f-4479-9b40-7f30c54a4f22" />
+<img width="1903" height="941" alt="image" src="https://github.com/user-attachments/assets/119072c2-3a90-4a36-a900-1b00f541f6d4" />
+<img width="1893" height="909" alt="image" src="https://github.com/user-attachments/assets/5b5fc8ce-12ba-447a-afab-5043e79cf48e" />
+<img width="1903" height="947" alt="image" src="https://github.com/user-attachments/assets/aa25d44e-b82c-440c-9135-ed9e78974eeb" />
+<img width="1898" height="938" alt="image" src="https://github.com/user-attachments/assets/a8f69d3d-bd30-4efa-bcc9-3c0bcb9ad2b2" />
+<img width="397" height="947" alt="image" src="https://github.com/user-attachments/assets/0024fc68-f944-4bb6-a03e-fcb34ef20a0e" />
+<img width="404" height="744" alt="image" src="https://github.com/user-attachments/assets/c4544040-89ba-4191-a3f7-eb9dd044b8e8" />
+<img width="424" height="839" alt="image" src="https://github.com/user-attachments/assets/8e2e4301-8bb7-4eb8-96c8-438472b639c3" />
+<img width="402" height="780" alt="image" src="https://github.com/user-attachments/assets/0fba971d-2638-4207-a1ed-7ae595236058" />
+<img width="402" height="834" alt="image" src="https://github.com/user-attachments/assets/25d13853-d168-4ef1-935c-fa28ccc9ccf1" />
+
+
 ## Descripción del Proyecto
 
 Valkia Coffee es un sitio web de presentación para una tienda en línea de café de especialidad colombiano. El proyecto está enfocado en amantes del café que desean comprar lotes de pequeños caficultores de regiones como Huila, Nariño, Sierra Nevada y Quindío, además de adquirir accesorios de preparación como V60 o prensas francesas y suscribirse a cajas mensuales.
