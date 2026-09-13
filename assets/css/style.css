@@ -916,19 +916,76 @@
   body.dark-mode .cafe-card,
   body.dark-mode .perfil,
   body.dark-mode .metodo,
-  body.dark-mode .paso,
-  body.dark-mode .featured-slider-container{
+  body.dark-mode .paso{
     background:#1E1611;
     border-color:#3E3027;
     color:#FAF9F6;
   }
 
+  /* Carrusel en Modo Oscuro (Index) */
+  body.dark-mode .featured-slider-container{
+    background:#1C140F;
+    border-color:#3E3027;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  }
+  body.dark-mode .slide-photo-col{
+    background:#17100B;
+  }
+  body.dark-mode .slide-info-col{
+    background:#1C140F !important;
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .slide-origin{
+    color:#A3B18A !important;
+  }
+  body.dark-mode .slide-title{
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .slide-note-pill{
+    background:#281F18 !important;
+    color:#E6D8C6 !important;
+    border-color:#423429 !important;
+  }
+  body.dark-mode .slide-desc{
+    color:#E6D8C6 !important;
+  }
+  body.dark-mode .slide-specs{
+    border-top-color:#2D221A !important;
+    border-bottom-color:#2D221A !important;
+  }
+  body.dark-mode .slide-specs .spec-label{
+    color:#A3B18A !important;
+  }
+  body.dark-mode .slide-specs .spec-val{
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .slide-actions .btn-dark{
+    background:var(--oliva) !important;
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .slide-actions .btn-dark:hover{
+    background:#7B856A !important;
+  }
+  body.dark-mode .slider-arrow{
+    background:#281F18 !important;
+    border-color:#423429 !important;
+    color:#FAF9F6 !important;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3) !important;
+  }
+  body.dark-mode .slider-arrow:hover{
+    background:#362A21 !important;
+  }
+  body.dark-mode .slider-dot{
+    background:#3E3027 !important;
+  }
+  body.dark-mode .slider-dot.active{
+    background:var(--oliva) !important;
+  }
+
   body.dark-mode .cafe-notes,
   body.dark-mode .perfil p,
   body.dark-mode .metodo p,
-  body.dark-mode .paso p,
-  body.dark-mode .slide-desc,
-  body.dark-mode .slide-specs .spec-label{
+  body.dark-mode .paso p{
     color:#D9C8B4;
   }
 
@@ -936,7 +993,6 @@
   body.dark-mode .perfil h3,
   body.dark-mode .metodo h3,
   body.dark-mode .paso h3,
-  body.dark-mode .slide-title,
   body.dark-mode .historia .section-head h2{
     color:#FAF9F6;
   }
