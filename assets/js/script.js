@@ -391,12 +391,11 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartBadge();
   renderCart();
 
-  // Modo Oscuro (Bonus +4 pts) con persistencia en localStorage
+  // Modo Oscuro (Bonus +4 pts) - Por defecto Modo Claro
   const themeToggle = document.getElementById('themeToggle');
   const savedTheme = localStorage.getItem('valkia_theme');
-  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+  if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
   }
 

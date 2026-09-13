@@ -82,14 +82,15 @@
     box-shadow:0 1px 0 rgba(36,26,20,0.08);
   }
   .logo{
-    display:flex; align-items:center; gap:0.55rem;
-    font-family:var(--serif); font-size:1.7rem; font-weight:500; letter-spacing:0.01em;
+    display:flex; align-items:center; gap:0.45rem;
+    font-family:var(--serif); font-size:clamp(1.15rem, 4vw, 1.65rem); font-weight:500; letter-spacing:0.01em;
+    white-space:nowrap; flex-shrink:0;
   }
-  .logo svg{ width:26px; height:26px; flex-shrink:0; }
+  .logo svg{ width:22px; height:22px; flex-shrink:0; }
   nav.primary-nav{ display:none; align-items:center; gap:2.4rem; }
   nav.primary-nav a{ font-size:0.98rem; font-weight:500; }
   nav.primary-nav a:hover{ opacity:0.7; }
-  .header-actions{ display:flex; align-items:center; gap:1.2rem; }
+  .header-actions{ display:flex; align-items:center; gap:0.9rem; }
   .menu-toggle{
     background:none; border:none; color:inherit; cursor:pointer;
     display:flex; flex-direction:column; gap:5px; padding:0.4rem;
@@ -99,12 +100,19 @@
   .mobile-nav{
     position:fixed; inset:0; background:var(--cafe-oscuro); color:var(--blanco);
     z-index:99; display:flex; flex-direction:column; justify-content:center;
-    padding:2rem var(--pad); gap:1.6rem;
-    transform:translateY(-100%); transition:transform 0.4s ease;
+    padding:5.5rem 1.8rem 2.5rem; gap:0.9rem;
+    transform:translateY(-100%); transition:transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .mobile-nav.open{ transform:translateY(0); }
-  .mobile-nav a{ font-family:var(--serif); font-size:2.1rem; font-weight:400; }
-  .mobile-nav .btn{ margin-top:1rem; align-self:flex-start; }
+  .mobile-nav a{
+    font-family:var(--sans); font-size:1.2rem; font-weight:500;
+    color:var(--blanco); padding:0.65rem 0; border-bottom:1px solid rgba(250,249,246,0.1);
+  }
+  .mobile-nav a.active{ color:var(--arena); font-weight:600; }
+  .mobile-nav .btn{
+    margin-top:1rem; font-size:0.85rem; padding:0.8rem 1.4rem;
+    align-self:stretch; justify-content:center; text-align:center;
+  }
  
   header .header-actions .btn-header{ display:none; }
  
@@ -1155,51 +1163,68 @@
 
     /* Carrusel de Cafés Destacados en Móvil */
     .coffee-slider-section {
-      padding: 1.5rem 1.2rem 2.5rem;
+      padding: 1.2rem 0.8rem 2rem;
     }
     .featured-slider-container {
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(36,26,20,0.06);
     }
     .slide-grid {
       min-height: auto;
     }
     .slide-photo-col {
-      padding: 1.5rem 1rem;
-      min-height: 220px;
+      padding: 1.2rem 1rem 0.5rem;
+      min-height: 180px;
     }
     .slide-photo-col img {
-      max-height: 200px;
+      max-height: 170px;
     }
     .slide-info-col {
-      padding: 1.5rem 1.2rem 3.5rem;
+      padding: 1.2rem 1.2rem 3.4rem;
+    }
+    .slide-origin {
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
     }
     .slide-title {
-      font-size: 1.8rem;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+    .slide-notes-list {
+      gap: 0.35rem;
+      margin-bottom: 0.8rem;
+    }
+    .slide-note-pill {
+      font-size: 0.74rem;
+      padding: 2px 9px;
     }
     .slide-desc {
-      font-size: 0.98rem;
-      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      margin-bottom: 1rem;
     }
     .slide-specs {
-      gap: 1.4rem;
-      padding: 0.9rem 0;
-      margin-bottom: 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      padding: 0.6rem 0;
+      margin-bottom: 1.2rem;
     }
     .slide-actions .btn {
       width: 100%;
       justify-content: center;
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
     }
     .slider-arrow {
-      width: 36px;
-      height: 36px;
-      opacity: 0.85;
+      display: none; /* Ocultar flechas en moviles; se usa swipe tactil y puntos */
     }
-    .slider-arrow.prev { left: 8px; }
-    .slider-arrow.next { right: 8px; }
     .slider-dots {
-      bottom: 1rem;
-      right: 50%;
-      transform: translateX(50%);
+      bottom: 0.9rem;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
     }
 
     /* Catálogo & Filtros */
