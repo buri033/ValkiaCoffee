@@ -887,10 +887,26 @@
   body.dark-mode .catalogo,
   body.dark-mode .historia,
   body.dark-mode .perfiles,
+  body.dark-mode .metodos,
   body.dark-mode .cta-final,
   body.dark-mode .coffee-slider-section{
-    background:#140E0A;
+    background:#140E0A !important;
     color:#FAF9F6;
+  }
+
+  body.dark-mode .metodo{
+    background:#1E1611 !important;
+    border:1px solid #3E3027;
+    border-radius:8px;
+  }
+  body.dark-mode .metodo svg{
+    stroke:#FAF9F6 !important;
+  }
+  body.dark-mode .metodo h3{
+    color:#FAF9F6 !important;
+  }
+  body.dark-mode .metodo p{
+    color:#D9C8B4 !important;
   }
 
   body.dark-mode .filosofia p,
