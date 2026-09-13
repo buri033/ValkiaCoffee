@@ -109,9 +109,17 @@
     color:var(--blanco); padding:0.65rem 0; border-bottom:1px solid rgba(250,249,246,0.1);
   }
   .mobile-nav a.active{ color:var(--arena); font-weight:600; }
-  .mobile-nav .btn{
+  .mobile-nav .btn,
+  .mobile-nav a.btn-primary,
+  .mobile-nav .btn-primary{
     margin-top:1rem; font-size:0.85rem; padding:0.8rem 1.4rem;
     align-self:stretch; justify-content:center; text-align:center;
+    background:var(--crema) !important; color:var(--cafe-oscuro) !important;
+    border-bottom:none !important; font-weight:700;
+  }
+  .mobile-nav a.btn-primary:hover,
+  .mobile-nav .btn-primary:hover{
+    background:var(--arena) !important; color:var(--cafe-oscuro) !important;
   }
  
   header .header-actions .btn-header{ display:none; }
@@ -296,8 +304,8 @@
   .cafe-grid{
     display:grid; grid-template-columns:1fr; gap:2.6rem;
   }
-  @media (min-width:640px){ .cafe-grid{ grid-template-columns:1fr 1fr; } }
-  @media (min-width:1080px){ .cafe-grid{ grid-template-columns:repeat(4,1fr); } }
+  @media (min-width:640px){ .cafe-grid{ grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); } }
+  @media (min-width:1080px){ .cafe-grid{ grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); } }
  
   .cafe-card{ display:flex; flex-direction:column; }
   .cafe-photo{
@@ -523,8 +531,11 @@
 
   /* ---------- mejor visualización de imágenes ---------- */
   .cafe-photo img{
-    width:100%; height:100%; object-fit:contain; padding:1.2rem;
+    width:100%; height:100%; object-fit:cover; padding:0;
     transition:transform 0.4s ease;
+  }
+  .cafe-photo img[src*="bolsa-"]{
+    object-fit:contain; padding:1.2rem;
   }
   .cafe-card:hover .cafe-photo img{ transform:scale(1.06); }
   .filosofia-photo img, .voces-photo img, .historia-photo img{

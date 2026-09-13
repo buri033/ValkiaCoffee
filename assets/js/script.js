@@ -53,6 +53,12 @@ const productos = [
     intensidad: 0, precio: 120000, precioFmt: '$120.000', accent: '#4A382C',
     imagen: 'assets/images/gallery/tostadora-cafe.webp', badge: 'Accesorios'
   },
+  {
+    id: 'p8', categoria: 'accesorios', nombre: 'Prensa Francesa Émbolo Cristal', origen: 'Vidrio termorresistente y acero 304',
+    notas: ['Cuerpo denso y sedoso', 'Capacidad 600ml'], proceso: 'Inmersión Directa',
+    intensidad: 0, precio: 95000, precioFmt: '$95.000', accent: '#68705A',
+    imagen: 'assets/images/gallery/finca.jpg', badge: 'Accesorios'
+  },
 
   // --- SUSCRIPCIONES & KITS ---
   {
