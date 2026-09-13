@@ -45,7 +45,7 @@ const productos = [
     id: 'p5', categoria: 'accesorios', nombre: 'Cafetera Dripper V60 Cristal', origen: 'Vidrio borosilicato resistente al calor',
     notas: ['Extracción limpia', 'Capacidad 1-4 tazas'], proceso: 'Método de Goteo',
     intensidad: 0, precio: 85000, precioFmt: '$85.000', accent: '#382A21',
-    imagen: 'assets/images/gallery/taza-colombiana.avif', badge: 'Accesorios'
+    imagen: 'assets/images/products/dripper-v60.png', badge: 'Accesorios'
   },
   {
     id: 'p6', categoria: 'accesorios', nombre: 'Molino Manual Cono Cerámico', origen: 'Ajuste micrométrico de molienda',
@@ -57,7 +57,7 @@ const productos = [
     id: 'p8', categoria: 'accesorios', nombre: 'Prensa Francesa Émbolo Cristal', origen: 'Vidrio termorresistente y acero 304',
     notas: ['Cuerpo denso y sedoso', 'Capacidad 600ml'], proceso: 'Inmersión Directa',
     intensidad: 0, precio: 95000, precioFmt: '$95.000', accent: '#68705A',
-    imagen: 'assets/images/gallery/finca.jpg', badge: 'Accesorios'
+    imagen: 'assets/images/products/prensa-francesa.png', badge: 'Accesorios'
   },
 
   // --- SUSCRIPCIONES & KITS ---
